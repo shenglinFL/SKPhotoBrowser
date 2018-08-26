@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
   s.requires_arc        = true
   s.frameworks          = "UIKit"
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
-  s.dependency "PINRemoteImage"
+  s.dependency "FLAnimatedImage"
 end

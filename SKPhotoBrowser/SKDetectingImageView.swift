@@ -7,13 +7,13 @@
 //
 
 import UIKit
-
+import FLAnimatedImage
 @objc protocol SKDetectingImageViewDelegate {
     func handleImageViewSingleTap(_ touchPoint: CGPoint)
     func handleImageViewDoubleTap(_ touchPoint: CGPoint)
 }
 
-class SKDetectingImageView: UIImageView {
+class SKDetectingImageView: FLAnimatedImageView {
     weak var delegate: SKDetectingImageViewDelegate?
     
     required init?(coder aDecoder: NSCoder) {
