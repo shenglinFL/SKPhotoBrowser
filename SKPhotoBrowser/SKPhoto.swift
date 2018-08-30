@@ -70,7 +70,11 @@ open class SKPhoto: NSObject, SKPhotoProtocol {
         guard photoURL != nil, let URL = URL(string: photoURL) else { return }
         
         // Fetch Image
-        let session = URLSession(configuration: URLSessionConfiguration.default)
+        let configuration = URLSessionConfiguration.default
+        if !SKDownloadOptons.isUrlCache { // cache only depend on other cache such as SDWebImage
+            configuration.urlCache = nil
+        }
+        let session = URLSession(configuration: configuration)//URLSession(configuration: URLSessionConfiguration.default)
             var task: URLSessionTask?
             task = session.dataTask(with: URL, completionHandler: { [weak self] (data, response, error) in
                 guard let `self` = self else { return }

@@ -64,3 +64,8 @@ public struct SKToolbarOptions {
     public static var font: UIFont = .systemFont(ofSize: 17.0)
     public static var textShadowColor: UIColor = .black
 }
+
+public struct SKDownloadOptons {
+    public static var isUrlCache: Bool = true
+    
+}
