@@ -7,11 +7,13 @@
 //
 
 import UIKit.UIImage
-
+import FLAnimatedImage
 public protocol SKCacheable {}
 public protocol SKImageCacheable: SKCacheable {
     func imageForKey(_ key: String) -> UIImage?
     func setImage(_ image: UIImage, forKey key: String)
+    func imageGifForKey(_ key: String) -> FLAnimatedImage?
+    func setGifImage(_ image: FLAnimatedImage, forKey key: String)
     func removeImageForKey(_ key: String)
     func removeAllImages()
 }
