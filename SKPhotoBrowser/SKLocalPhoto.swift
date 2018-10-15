@@ -48,7 +48,7 @@ open class SKLocalPhoto: NSObject, SKPhotoProtocol {
             if FileManager.default.fileExists(atPath: photoURL) {
                 if let data = FileManager.default.contents(atPath: photoURL) {
 //                    self.loadUnderlyingImageComplete()
-                    if photoURL.contains("gif") {
+                    if photoURL.contains(".gif") {
                         self.underlyingGifImage = FLAnimatedImage(animatedGIFData: data)
                     } else {
                         self.underlyingImage = UIImage(data: data)
